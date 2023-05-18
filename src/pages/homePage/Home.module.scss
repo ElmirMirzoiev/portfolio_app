@@ -1,0 +1,203 @@
+@import "src/common/styles/variables";
+@import "src/common/styles/Templates.module";
+
+.mainContent {
+  @extend %tplContent;
+
+  .mainPhoto {
+    max-width: 500px;
+    height: auto;
+    border-radius: 30px;
+    margin-right: 40px;
+  }
+
+  .greetingBlock {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    .animatedText {
+      position: relative;
+      height: 40px;
+      overflow: hidden;
+      text-align: center;
+      color: $blue;
+
+      .animatedTextTitle {
+        font-size: 30px;
+        text-transform: uppercase;
+        line-height: 50px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        animation: fadeInDown 8s infinite alternate 1s;
+      }
+    }
+
+    .greetingText {
+      width: 90%;
+      color: #A4A5B1;;
+      text-transform: none;
+      font-weight: 500;
+      line-height: 1.6;
+      margin: 0 0 15px;
+    }
+
+    .buttonsBlock {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .mainButton {
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 180px;
+        height: 40px;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        border: 1px solid $purpleLight;
+        background-color: transparent;
+        color: #fff;
+        border-radius: 20px;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 10px 0;
+        text-decoration: none;
+        transition: background-color 2.5s ease-in-out, transform 2s ease-in-out;
+        position: relative;
+
+        &:hover {
+          background: linear-gradient(270deg, $purpleLight, $blue);
+
+          .iconArrow {
+            background-color: $blue;
+            transform: translateX(-140px);
+          }
+        }
+
+        .iconArrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $purpleLight;
+          border-radius: 45%;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: -1px;
+          right: 0;
+          transition: transform 1.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+
+//animations
+@keyframes fadeInDown {
+  from {
+    /*opacity: 1;*/
+    -webkit-transform: translate3d(0, -200%, 0);
+    transform: translate3d(0, -200%, 0);
+  }
+  to {
+    /*opacity: 1;*/
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+
+//media requests
+@media (min-width: 970px) and (max-width: 1080px) {
+  .mainContent {
+    .mainPhoto {
+      width: 60%;
+    }
+
+    .greetingBlock {
+      width: 40%;
+
+      .animatedText {
+        .animatedTextTitle {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 701px) and (max-width: 970px) {
+  .mainContent {
+    flex-direction: column;
+
+    .mainPhoto {
+      width: 90%;
+    }
+
+    .greetingBlock {
+      width: 90%;
+
+      .animatedText {
+        .animatedTextTitle {
+          font-size: 26px;
+        }
+      }
+
+      .greetingText {
+        font-size: 22px;
+      }
+
+      .buttonsBlock .mainButton {
+        background: linear-gradient(270deg, $purpleLight, $blue);
+
+        .iconArrow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 340px) and (max-width: 700px) {
+  .mainContent {
+    padding: 10px;
+    flex-direction: column;
+
+    .mainPhoto {
+      margin: 0 auto 0;
+      width: 100%;
+    }
+
+    .greetingBlock {
+      width: 100%;
+      text-align: center;
+
+      .animatedText {
+        width: 100%;
+
+        .animatedTextTitle {
+          font-size: 18px;
+        }
+      }
+
+      .greetingText {
+        width: 90%;
+      }
+
+      > div .mainButton {
+        background: linear-gradient(270deg, $purpleLight, $blue);
+
+        .iconArrow {
+          display: none;
+        }
+      }
+    }
+  }
+}

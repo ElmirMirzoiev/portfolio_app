@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import "src/common/styles/variables";
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Lato,sans-serif;
+  }
+  
+  .App {
+    position: relative;
+    background-color: #4f4f51;
+    min-height: 100vh;
+    padding: 4% 0;
+    display: flex;
+    align-items: center;
+    .appBlockElement {
+      background: linear-gradient(75deg, $blue, $blue);
+      border-radius: 50%;
+      position: absolute;
+      height: 500px;
+      width: 500px;
+      left: -11%;
+      top: -21%;
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 50%);
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: $blue;
+      bottom: 14px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 50%);
+      overflow: hidden;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background-color: $blue;
+      right: 44px;
+      top: 84px;
+      box-shadow: 0 14px 65px rgba(0, 0, 0, 50%);
+      overflow: hidden;
+    }
+    .appContent {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      z-index: 1000;
+  
+    }
+  }

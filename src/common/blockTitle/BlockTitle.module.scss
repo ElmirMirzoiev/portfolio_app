@@ -1,0 +1,88 @@
+@import 'src/common/styles/variables.scss';
+
+.titleIntro {
+    color: $grey;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+.mainTitle {
+    color: $white;
+    font-size: 55px;
+    line-height: 1.2;
+    font-weight: 700;
+    word-spacing: 5px;
+    position: relative;
+    text-align: center;
+}
+.animatedBar {
+    content: '';
+    display: block;
+    position: relative;
+    background-color: $blue;
+    height: 3px;
+    left: 0;
+    right: 0;
+    margin: 15px auto 15px auto;
+    width: 100px;
+    border-radius: 4px;
+    &:before {
+        @extend %tplAnimatedElementsOfBar;
+        left: 8px;
+        -webkit-animation: move1 5s infinite ease-in-out;
+        animation: move1 5s infinite ease-in-out;
+    }
+    &:after {
+        @extend %tplAnimatedElementsOfBar;
+        left: 0;
+        -webkit-animation: move2 5s infinite ease-in-out;
+        animation: move2 5s infinite ease-in-out;
+    }
+
+}
+
+%tplAnimatedElementsOfBar {
+    background-color: #212121;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 4px;
+    animation-direction: alternate;
+}
+
+
+@keyframes move1 {
+    0%{
+        left: 8px;
+    }
+    100%{
+        left: 100px;
+    }
+}
+@keyframes move2 {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 92px
+    }
+}
+
+
+@media (max-width: 1069px) {
+    .mainTitle {
+        font-size: 46px;
+    }
+}
+
+
+
+@media (min-width: 360px) and (max-width: 620px) {
+    .mainTitle {
+        font-size: 40px;
+    }
+}
