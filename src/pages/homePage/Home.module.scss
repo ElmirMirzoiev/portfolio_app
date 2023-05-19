@@ -38,8 +38,9 @@
 
     .greetingText {
       width: 90%;
-      color: #A4A5B1;;
+      color: $text;
       text-transform: none;
+      text-align: center;
       font-weight: 500;
       line-height: 1.6;
       margin: 0 0 15px;
@@ -59,7 +60,7 @@
         display: inline-block;
         font-size: 15px;
         font-weight: 600;
-        border: 1px solid $purpleLight;
+        border: 1px solid $blue;
         background-color: transparent;
         color: #fff;
         border-radius: 20px;
@@ -71,7 +72,7 @@
         position: relative;
 
         &:hover {
-          background: linear-gradient(270deg, $purpleLight, $blue);
+          background: linear-gradient(270deg, $blue, $blue);
 
           .iconArrow {
             background-color: $blue;
@@ -83,7 +84,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: $purpleLight;
+          background-color: $blue;
           border-radius: 45%;
           width: 40px;
           height: 40px;

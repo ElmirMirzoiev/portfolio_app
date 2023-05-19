@@ -1,0 +1,7 @@
+@import "src/common/styles/Templates.module";
+
+
+.skillsContent {
+  @extend %tplContent;
+  flex-direction: column;
+}

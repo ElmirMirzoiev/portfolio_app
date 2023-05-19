@@ -1,0 +1,116 @@
+@import "src/common/styles/variables";
+@import "src/common/styles/Templates.module";
+
+
+.personalInfoBlock {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  width: 100%;
+
+  .photoBlock {
+    width: 300px;
+    position: relative;
+
+    > img {
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: auto;
+      border-radius: 30px;
+      box-shadow: 0 0 10px RGB(0 0 0 / 90%);
+    }
+  }
+
+  .infoBlock {
+    width: 350px;
+
+    > h3 {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      color: #fff;
+      padding: 5px 0 15px;
+    }
+
+    .items {
+      margin-top: 10px;
+      font-size: 16px;
+      list-style: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+
+      > li {
+        color: $blue;
+        padding-bottom: 10px;
+        letter-spacing: 1px;
+
+        > span {
+          color: $white;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .contacts {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
+      margin-bottom: 40px;
+
+      .iconLink {
+        color: $white;
+        margin: 8px 10px;
+        &:hover {
+          color: $blue;
+        }
+
+      }
+    }
+    .linkToCV {
+      text-decoration: none;
+      background: linear-gradient(270deg, $blue, $blue);
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+      color: $white;
+      transition: all 1s ease-in-out;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px 0 RGB(0 0 0 / 50%);
+      padding: 15px 30px;
+
+      &:hover {
+        transform: translateY(-7px);
+      }
+    }
+  }
+}
+
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .personalInfoBlock {
+      .contacts {
+        .icons {
+          .iconLink {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }

@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import s from './Nav.module.scss'
+import s from './NavBar.module.scss'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import WebIcon from '@mui/icons-material/Web';
@@ -7,7 +7,7 @@ import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import {NavLink} from 'react-router-dom';
 
 
-export const Nav = () => {
+export const NavBar = () => {
     return (
         <div className={s.navBlock}>
             <NavItem text={'Home'} path={'/'}/>
