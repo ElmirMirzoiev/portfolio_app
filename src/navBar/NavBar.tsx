@@ -12,7 +12,7 @@ export const NavBar = () => {
       <NavItem text={"Home"} path={"/"} />
       <NavItem text={"About me"} path={"/about"} />
       <NavItem text={"Portfolio"} path={"/portfolio"} />
-      <NavItem text={"Contact"} path={"/contact"} />
+      <NavItem text={"Contacts"} path={"/contacts"} />
     </div>
   );
 };
@@ -26,7 +26,7 @@ export const NavItem: FC<NavTextPropsType> = ({ text, path }) => {
     if (text === "Home") return <HomeRoundedIcon fontSize="large" />;
     if (text === "About me") return <PersonRoundedIcon fontSize="large" />;
     if (text === "Portfolio") return <WebIcon fontSize="large" />;
-    if (text === "Contact") return <ChatRoundedIcon fontSize="large" />;
+    if (text === "Contacts") return <ChatRoundedIcon fontSize="large" />;
   };
 
   return (

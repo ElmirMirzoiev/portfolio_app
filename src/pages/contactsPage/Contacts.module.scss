@@ -1,0 +1,59 @@
+@import "src/common/styles/variables";
+@import "src/common/styles/Templates.module";
+
+
+.formsContent {
+  @extend %tplContent;
+  flex-direction: column;
+
+  .formsBlock {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contactInfoBlock {
+      min-width: 300px;
+      @extend %tplBackgroundCard;
+      background: linear-gradient(270deg, $blue, $purpleLight);
+      height: 340px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 10px 40px;
+    }
+  }
+  .messageSent {
+    @extend %tplBackgroundCard;
+    width: 60%;
+    margin: 0 0 0 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 60px;
+    color: white;
+
+
+  }
+}
+
+
+@media (min-width: 340px) and (max-width: 985px) {
+  .formsContent {
+    .formsBlock {
+      flex-direction: column-reverse;
+
+      .contactInfoBlock {
+        width: 95%;
+        margin-top: 30px;
+      }
+    }
+    .messageSent {
+      width: 95%;
+      margin: 0;
+    }
+  }
+}

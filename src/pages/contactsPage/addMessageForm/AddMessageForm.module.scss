@@ -1,0 +1,77 @@
+@import "src/common/styles/variables";
+@import "src/common/styles/Templates.module";
+
+.forms {
+  @extend %tplBackgroundCard;
+  width: 60%;
+  margin: 0 0 0 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+
+  .input {
+    width: 90%;
+    margin: 10px 0;
+    background-color: #343549;
+    max-width: 45%;
+    vertical-align: middle;
+    border: 1px solid $purpleLight;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: $white;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $blue;
+    }
+  }
+
+  .inputMessage {
+    width: 100%;
+    height: 100px;
+    background-color: #343549;
+    border: 1px solid $purpleLight;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0 15px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $blue;
+    }
+  }
+
+  .submitBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+}
+
+
+@media (min-width: 340px) and (max-width: 985px) {
+  .forms {
+    width: 95%;
+    margin: 0;
+    padding: 10px;
+
+    > input {
+      min-width: 100%;
+    }
+
+    > textarea {
+      min-width: 100%;
+    }
+  }
+}
