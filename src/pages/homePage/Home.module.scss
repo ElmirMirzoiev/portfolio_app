@@ -17,7 +17,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 
     .animatedText {
       position: relative;
@@ -98,7 +97,6 @@
   }
 }
 
-
 //animations
 @keyframes fadeInDown {
   from {
@@ -112,7 +110,6 @@
     transform: translateZ(0);
   }
 }
-
 
 //media requests
 @media (min-width: 970px) and (max-width: 1080px) {
@@ -132,7 +129,6 @@
     }
   }
 }
-
 
 @media (min-width: 701px) and (max-width: 970px) {
   .mainContent {
