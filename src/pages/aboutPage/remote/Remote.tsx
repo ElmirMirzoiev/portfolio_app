@@ -7,7 +7,7 @@ export const RemoteWorkBlock = () => {
         <div className={s.remoteBlock}>
                 <div className={s.remoteContent}>
                     <h3 className={s.title}>Looking into remote work</h3>
-                    <NavLink to={'/contact'} className={s.link}>
+                    <NavLink to={'/contacts'} className={s.link}>
                         <Button name={'Hire me'} callback={()=>{}}/>
                     </NavLink>
                 </div>

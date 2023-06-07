@@ -2,13 +2,13 @@ import { FC } from "react";
 import s from "./AddMessageForm.module.scss";
 import { DataType, formAPI } from "../../../api/API";
 import { useFormik } from "formik";
-import { Button } from "../../../common/button/Button";
+// import { Button } from "../../../common/button/Button";
 
-// type FormikErrorType = {
-//     name: string
-//     email: string
-//     textMessage: string
-// }
+type FormikErrorType = {
+  name: string;
+  email: string;
+  textMessage: string;
+};
 
 type AddMessageFormPropsType = {
   changeFormView: (value: boolean) => void;
@@ -31,23 +31,24 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
       textMessage: "",
     },
 
-    // validate: (values) => {
-    //     const errors: FormikErrorType = {name: '', email: '', textMessage: ''};
-    //     if (!values.name) {
-    //         errors.name = 'Name Is Required';
-    //     }
-    //     if (!values.email) {
-    //         errors.email = 'Email Is Required';
-    //     }
-    //     if (!values.textMessage) {
-    //         errors.textMessage = 'Message Is Required';
-    //     }
-    //     return errors;
-    // },
+    validate: (values) => {
+      const errors: FormikErrorType = { name: "", email: "", textMessage: "" };
+      if (!values.name) {
+        errors.name = "Name Is Required";
+      }
+      if (!values.email) {
+        errors.email = "Email Is Required";
+      }
+      if (!values.textMessage) {
+        errors.textMessage = "Message Is Required";
+      }
+      return errors;
+    },
 
     onSubmit: (values) => {
-      send(values);
-      formik.resetForm();
+      // send(values);
+      console.log(values);
+      // formik.resetForm();
     },
   });
 
@@ -58,20 +59,22 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
         name="name"
         type="text"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.name}
         className={s.input}
         placeholder={"Name*"}
       />
 
-      {/* {formik.touched.name && formik.errors.name && <div style={{ color: "red" }}>
-                {formik.errors.name}
-                </div>} */}
+      {formik.touched.name && formik.errors.name && (
+        <div style={{ color: "red" }}>{formik.errors.name}</div>
+      )}
 
       <input
         id="phone"
         name="phone"
         type="text"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.phone}
         className={s.input}
         placeholder={"Phone"}
@@ -81,19 +84,21 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
         name="email"
         type="email"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.email}
         className={s.input}
         placeholder={"Email*"}
       />
-      {/* {formik.touched.email && formik.errors.email && (
+      {formik.touched.email && formik.errors.email && (
         <div style={{ color: "red" }}>{formik.errors.email}</div>
-      )} */}
+      )}
       <input
         id="subject"
         name="subject"
         type="text"
         onChange={formik.handleChange}
         value={formik.values.subject}
+        onBlur={formik.handleBlur}
         className={s.input}
         placeholder={"Subject"}
       />
@@ -101,17 +106,17 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
         id="textMessage"
         name="textMessage"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.textMessage}
         className={s.inputMessage}
         placeholder={"Your Message*"}
       />
-      {/* {formik.touched.textMessage && formik.errors.textMessage && (
-        <div style={{ color: "red" }}>
-          {formik.errors.textMessage}
-        </div>
-      )} */}
+      {formik.touched.textMessage && formik.errors.textMessage && (
+        <div>{formik.errors.textMessage}</div>
+      )}
       <div className={s.submitBtn}>
-        <Button type="submit" name={"Send"} callback={() => {}} />
+        {/* <Button type="submit" name={"Send"} /> */}
+        <button type="submit">Send</button>
       </div>
     </form>
   );

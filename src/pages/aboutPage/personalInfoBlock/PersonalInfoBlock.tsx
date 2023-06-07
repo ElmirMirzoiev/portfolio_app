@@ -35,7 +35,7 @@ export const PersonalInfoBlock: FC<PersonalInfoPropsType> = ({ data }) => {
 				<div className={s.icons}>
 					<IconsBlock data={MainData.icons} className={s.iconLink} />
 				</div>
-				<a href={"CV LINK"} target={"_blank"} rel={"noreferrer"} className={s.linkToCV}>
+				<a href={"https://drive.google.com/"} target={"_blank"} rel={"noreferrer"} className={s.linkToCV}>
 					Download CV
 				</a>
 			</div>
