@@ -1,7 +1,6 @@
 @import "src/common/styles/variables";
 @import "src/common/styles/Templates.module";
 
-
 .formsContent {
   @extend %tplContent;
   flex-direction: column;
@@ -9,6 +8,7 @@
   .formsBlock {
     height: 100%;
     width: 100%;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
       min-width: 300px;
       @extend %tplBackgroundCard;
       background: linear-gradient(270deg, $blue, $purpleLight);
-      height: 340px;
+      height: 330px;
       color: white;
       display: flex;
       flex-direction: column;
@@ -35,11 +35,8 @@
     align-items: center;
     padding: 20px 60px;
     color: white;
-
-
   }
 }
-
 
 @media (min-width: 340px) and (max-width: 985px) {
   .formsContent {

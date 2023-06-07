@@ -1,27 +1,21 @@
 import { FC } from "react";
 import s from "./AddMessageForm.module.scss";
-import { DataType, formAPI } from "../../../api/API";
-import { useFormik } from "formik";
-// import { Button } from "../../../common/button/Button";
+import { useFormik, FormikErrors } from "formik";
+import { Button } from "../../../common/button/Button";
 
-type FormikErrorType = {
+interface FormikErrorsType {
   name: string;
   email: string;
   textMessage: string;
-};
+}
 
 type AddMessageFormPropsType = {
   changeFormView: (value: boolean) => void;
 };
+
 export const AddMessageForm: FC<AddMessageFormPropsType> = ({
   changeFormView,
 }) => {
-  async function send(data: DataType) {
-    await formAPI.sendMessage(data).then(() => {
-      changeFormView(true);
-    });
-  }
-
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -32,7 +26,7 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
     },
 
     validate: (values) => {
-      const errors: FormikErrorType = { name: "", email: "", textMessage: "" };
+      const errors: FormikErrors<FormikErrorsType> = {};
       if (!values.name) {
         errors.name = "Name Is Required";
       }
@@ -46,9 +40,9 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
     },
 
     onSubmit: (values) => {
-      // send(values);
+      changeFormView(true);
       console.log(values);
-      // formik.resetForm();
+      formik.resetForm();
     },
   });
 
@@ -64,7 +58,6 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
         className={s.input}
         placeholder={"Name*"}
       />
-
       {formik.touched.name && formik.errors.name && (
         <div style={{ color: "red" }}>{formik.errors.name}</div>
       )}
@@ -79,6 +72,7 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
         className={s.input}
         placeholder={"Phone"}
       />
+
       <input
         id="email"
         name="email"
@@ -92,6 +86,7 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
       {formik.touched.email && formik.errors.email && (
         <div style={{ color: "red" }}>{formik.errors.email}</div>
       )}
+
       <input
         id="subject"
         name="subject"
@@ -112,11 +107,11 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
         placeholder={"Your Message*"}
       />
       {formik.touched.textMessage && formik.errors.textMessage && (
-        <div>{formik.errors.textMessage}</div>
+        <div style={{ color: "red" }}>{formik.errors.textMessage}</div>
       )}
+
       <div className={s.submitBtn}>
-        {/* <Button type="submit" name={"Send"} /> */}
-        <button type="submit">Send</button>
+        <Button type="submit" name={"Send"} callback={() => {}} />
       </div>
     </form>
   );
