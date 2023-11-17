@@ -9,7 +9,7 @@ import { AddMessageForm } from "./addMessageForm/AddMessageForm";
 export const Contacts = () => {
   const [isMessageSend, setIsMessageSend] = useState<boolean>(false);
 
-  let contactElements = ContactsData.contactItems.map((c) => {
+  const contactElements = ContactsData.contactItems.map((c) => {
     return (
       <ContactItem key={c.id} title={c.title} text={c.text}>
         {<c.icon />}
@@ -22,14 +22,12 @@ export const Contacts = () => {
       <BlockTitle title={ContactsData.blockTitle.title} />
       <div className={s.formsContent}>
         <div className={s.formsBlock}>
-          <div className={s.contactInfoBlock}>
-            {contactElements}
-        </div>
-        {
-            isMessageSend 
-            ?  <div className={s.messageSent}>Message has been sent</div>
-            :  <AddMessageForm changeFormView={setIsMessageSend} />
-        }
+          <div className={s.contactInfoBlock}>{contactElements}</div>
+          {isMessageSend ? (
+            <div className={s.messageSent}>Message has been sent</div>
+          ) : (
+            <AddMessageForm changeFormView={setIsMessageSend} />
+          )}
         </div>
       </div>
     </div>

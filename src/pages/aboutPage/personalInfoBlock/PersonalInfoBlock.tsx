@@ -4,19 +4,19 @@ import photo from "../../../common/images/photo.jpg";
 import { IconsBlock } from "../../homePage/icons/IconsBlock";
 import { MainData } from "../../../DATA/MainComponenetData";
 import { PersonalDataType } from "../../../DATA/BlockAboutData";
+import { cvLink } from "../../../DATA/BlockAboutData";
 
 type PersonalInfoPropsType = {
   data: PersonalDataType;
 };
 
 export const PersonalInfoBlock: FC<PersonalInfoPropsType> = ({ data }) => {
-  let infoItems = data.map((item, index) => {
+  const infoItems = data.map((item, index) => {
     return (
       <ul key={index} className={s.items}>
         <li>
           {item[0]}
           <span>{item[1]}</span>
-          <span>{item[2]}</span>
         </li>
       </ul>
     );
@@ -35,7 +35,12 @@ export const PersonalInfoBlock: FC<PersonalInfoPropsType> = ({ data }) => {
         <div className={s.icons}>
           <IconsBlock data={MainData.icons} className={s.iconLink} />
         </div>
-        <a href="#" target={"_blank"} rel={"noreferrer"} className={s.linkToCV}>
+        <a
+          href={cvLink}
+          target={"_blank"}
+          rel={"noreferrer"}
+          className={s.linkToCV}
+        >
           Download CV
         </a>
       </div>

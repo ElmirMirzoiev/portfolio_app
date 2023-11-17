@@ -7,16 +7,17 @@
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 10px 20px;
-  width: 100%;
+  width: 80%;
 
   .photoBlock {
-    width: 300px;
+    width: 31vh;
     height: auto;
     position: relative;
 
     > img {
       background-size: cover;
       background-position: center;
+      min-width: 222px;
       width: 100%;
       height: auto;
       border-radius: 30px;
@@ -25,7 +26,8 @@
   }
 
   .infoBlock {
-    width: 350px;
+    width: 31vh;
+    padding-left: 2vh;
 
     > h3 {
       font-size: 26px;
@@ -35,11 +37,12 @@
       text-transform: capitalize;
       color: #fff;
       padding: 5px 0 15px;
+      justify-content: center;
     }
 
     .items {
       margin-top: 10px;
-      font-size: 16px;
+      font-size: 5px;
       list-style: none;
       color: #fff;
       display: flex;
@@ -83,10 +86,11 @@
       }
     }
     .linkToCV {
+      text-align: center;
       text-decoration: none;
       background: linear-gradient(270deg, $blue, $blue);
       font-weight: bold;
-      font-size: 20px;
+      font-size: 1.5vh;
       border-radius: 10px;
       color: $white;
       transition: all 1s ease-in-out;
@@ -101,13 +105,13 @@
   }
 }
 
-@media (min-width: 350px) and (max-width: 390px) {
-  .personalInfoBlock {
-    .contacts {
-      .icons {
-        .iconLink {
-          color: $blue;
-        }
+@media (max-width: 500px) {
+  .items {
+    > li {
+      font-size: small;
+
+      > span {
+        font-size: small;
       }
     }
   }
