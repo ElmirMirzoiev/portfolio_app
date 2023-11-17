@@ -42,7 +42,7 @@ export const MyProjects = () => {
               href="https://github.com/ElmirMirzoiev"
             >
               {" "}
-              GiHub{" "}
+              GitHub{" "}
             </a>
             or you can open and download my CV in block About
           </div>

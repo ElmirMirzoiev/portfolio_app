@@ -1,13 +1,13 @@
 import { FC } from "react";
 import s from "./AddMessageForm.module.scss";
-import { useFormik, FormikErrors } from "formik";
+import { useFormik } from "formik";
 import { Button } from "../../../common/button/Button";
 
-interface FormikErrorsType {
-  name: string;
-  email: string;
-  textMessage: string;
-}
+// interface FormikErrorsType {
+//   name: string;
+//   email: string;
+//   textMessage: string;
+// }
 
 type AddMessageFormPropsType = {
   changeFormView: (value: boolean) => void;
@@ -25,19 +25,19 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
       textMessage: "",
     },
 
-    validate: (values) => {
-      const errors: FormikErrors<FormikErrorsType> = {};
-      if (!values.name) {
-        errors.name = "Name Is Required";
-      }
-      if (!values.email) {
-        errors.email = "Email Is Required";
-      }
-      if (!values.textMessage) {
-        errors.textMessage = "Message Is Required";
-      }
-      return errors;
-    },
+    // validate: (values) => {
+    //   const errors: FormikErrors<FormikErrorsType> = {};
+    //   if (!values.name) {
+    //     errors.name = "Name Is Required";
+    //   }
+    //   if (!values.email) {
+    //     errors.email = "Email Is Required";
+    //   }
+    //   if (!values.textMessage) {
+    //     errors.textMessage = "Message Is Required";
+    //   }
+    //   return errors;
+    // },
 
     onSubmit: (values) => {
       changeFormView(true);

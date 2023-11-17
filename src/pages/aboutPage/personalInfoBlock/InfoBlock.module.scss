@@ -1,7 +1,6 @@
 @import "src/common/styles/variables";
 @import "src/common/styles/Templates.module";
 
-
 .personalInfoBlock {
   display: flex;
   justify-content: space-around;
@@ -12,6 +11,7 @@
 
   .photoBlock {
     width: 300px;
+    height: auto;
     position: relative;
 
     > img {
@@ -80,7 +80,6 @@
         &:hover {
           color: $blue;
         }
-
       }
     }
     .linkToCV {
@@ -102,15 +101,14 @@
   }
 }
 
-
 @media (min-width: 350px) and (max-width: 390px) {
-    .personalInfoBlock {
-      .contacts {
-        .icons {
-          .iconLink {
-            color: $blue;
-          }
+  .personalInfoBlock {
+    .contacts {
+      .icons {
+        .iconLink {
+          color: $blue;
         }
       }
     }
   }
+}

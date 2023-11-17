@@ -55,6 +55,6 @@ export const MainData: MainDataType = {
     " I will be glad to join your team and work together",
   link: [
     { id: 1, path: "/about", title: "About me" },
-    { id: 2, path: "/contact", title: "Hire me" },
+    { id: 2, path: "/contacts", title: "Hire me" },
   ],
 };
