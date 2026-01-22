@@ -52,6 +52,7 @@
       align-items: center;
 
       .mainButton {
+        margin-right: 10px;
         margin-top: 20px;
         width: 180px;
         height: 40px;
@@ -68,6 +69,7 @@
         text-decoration: none;
         transition: background-color 2.5s ease-in-out, transform 2s ease-in-out;
         position: relative;
+        
 
         &:hover {
           background: linear-gradient(270deg, $blue, $blue);
