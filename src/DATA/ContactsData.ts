@@ -33,7 +33,7 @@ export const ContactsData = {
     },
     { id: 3, 
       title: "Phone", 
-      text: "+401703488263", 
+      text: "+491703488263", 
       icon: PhoneInTalkIcon },
   ],
 };
